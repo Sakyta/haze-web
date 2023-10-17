@@ -17,7 +17,7 @@ body {
 }
 
 .kaki {
-    background-color: #242a32;
+    background-color: #191A19;
     color: #fff;
     display: flex;
     justify-content: center;
@@ -37,6 +37,7 @@ body {
 .desc {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
     height: auto;
 }

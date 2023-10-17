@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
+    <?php include 'template/header.php'; ?>
+
     <div class="container">
         <form action="post" class="login-form">
             <div class="heading">Welcome Back to Haze</div>  

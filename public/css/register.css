@@ -9,7 +9,7 @@
 
 .container {
     display: flex;
-    background-image: url(https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg);
+    background-image: url(../img/bg.png);
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -17,7 +17,7 @@
 }
 
 .login-form {
-    background-color: #242a32;
+    background-color: #1e2b21;
     width: 30em;
     height: auto;
     display: flex;
@@ -55,12 +55,13 @@
 
 .sign-up button {
     outline: none;
-    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    background: linear-gradient(90deg, #00ff515c 0%, #00b92b 100%);
     border: none;
+    color: #fff;
 }
 
 .sign-up button:hover {
-    color: white;
+    color: rgb(6, 46, 8);
 }
 
 .btn-submit {
