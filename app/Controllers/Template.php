@@ -8,4 +8,9 @@ class Template extends BaseController
     {
         return view('template/footer');
     }
+
+    public function header()
+    {
+        return view('template/header');
+    }
 }
