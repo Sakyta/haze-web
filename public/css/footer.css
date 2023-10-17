@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.bawah {
+    flex: 1;
+}
+
+.kaki {
+    background-color: #242a32;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.rule {
+    border-top: 2px solid white;
+    margin: 2px;
+}
+
+.kaki img {
+    width: 150px;
+    height: 150px;
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: auto;
+}
+
+.bar-kaki {
+    display: flex;
+    gap: 10px;
+}
+
+.bar {
+    font-weight: 200;
+}
+
+.pemisah {
+    font-weight: 100;
+    opacity: 50%;
+}
