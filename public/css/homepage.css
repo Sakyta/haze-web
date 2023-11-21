@@ -1,0 +1,72 @@
+body {
+    background-color: #1e2b21;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+.populer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 5%;
+}
+
+.item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.populer img {
+    border-radius: 10px;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: blue;
+}
+
+.game-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.slider {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+.slider h4 {
+    margin-top: 5%;
+}
+
+.slides {
+    display: flex;
+    margin-left: 125px;
+    width: 37.5rem;
+    overflow: hidden;
+}
+
+.slides img {
+    border-radius: 10px;
+}
+
+.slide {
+    width: 37.5rem;
+    transition: .5s;
+}
+
+.choose_1:checked~.slides>.s1 {
+    margin-left: -0rem;
+}
+
+.choose_2:checked~.slides>.s1 {
+    margin-left: -37.5rem;
+}
