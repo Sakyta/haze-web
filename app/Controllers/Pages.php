@@ -24,4 +24,8 @@ class Pages extends BaseController
         return view('pages/about');
     }
 
+    public function games()
+    {
+        return view('pages/games');
+    }
 }

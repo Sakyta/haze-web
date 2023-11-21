@@ -43,6 +43,13 @@ class Login extends BaseController
             return redirect()->back();
         }
     }
+
+    public function logout()
+    {
+        session_unset();
+        session()->destroy();
+        return redirect()->to('/login');
+    }
 }
 
 ?>

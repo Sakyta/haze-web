@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e2b21;
+    color: white
+}
+
+.title {
+    font-weight: 800;
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.pre {
+    font-weight: 600;
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.slideshow {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.title, .pre {
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+    background-color: #1c241e;
+}
+
+.tengah {
+    flex: 0.5;
+}
+
+.display img {
+    width: 48em;
+    height: 27em;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+}
+
+.col img {
+    width: 16em;
+    height: 9em;
+}
+
+.info-game {
+    width: 50rem;
+    padding: 15px;
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+    border-radius: 1.5em;
+    background-color: #1c241e;
+}
+
+.info-game p {
+    text-align: justify;
+}
+
+.foo {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.info {
+    width: 50rem;
+    padding: 15px;
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+    border-radius: 1.5em;
+    background-color: #1c241e;
+}
+
+.price {
+    display: flex;
+    justify-content: end;
+}
+
+.price h3 {
+    background-color: #1c241e;
+    padding: 15px 0 15px 15px;
+    border-radius: 2em;
+}
+
+.price h3 a {
+    background-color: rgb(46, 54, 48);
+    padding: 15px;
+    border-radius: 2em;
+    text-decoration: none;
+    color: white;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: space-evenly;
+}

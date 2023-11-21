@@ -13,6 +13,7 @@ $routes->get('/homepage','Pages::homepage');
 $routes->post('/register','Register::index');
 $routes->get('/register/process','Register::process');
 $routes->get('/about','Pages::about');
-
+$routes->get('/games','Pages::games');
+$routes->get('/logout','Login::logout');
 
 $routes->setAutoRoute(true);
