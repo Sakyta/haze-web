@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function dashboard()
+    public function index()
     {
-        return view('pages/dashboard');
+        return redirect()->to('/dashboard');
     }
 }

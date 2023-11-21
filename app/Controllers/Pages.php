@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class Pages extends BaseController
 {
-    public function login()
+    public function dashboard()
     {
-        return view('pages/login');
+        return view('pages/dashboard');
     }
 
     public function register()
@@ -17,6 +17,11 @@ class Pages extends BaseController
     public function homepage()
     {
         return view('pages/homepage');
+    }
+
+    public function about()
+    {
+        return view('pages/about');
     }
 
 }

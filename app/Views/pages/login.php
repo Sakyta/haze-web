@@ -10,7 +10,12 @@
     <?php include 'template/header.php'; ?>
 
     <div class="container">
-        <form action="post" class="login-form">
+        <form action="/login/process" method="post" class="login-form">
+            <?php if (!empty(session()->getFlashdata('error'))): ?>
+            <div class="alert">
+                <h4><?= session()->getFlashdata('error') ?></h4>
+            </div>
+            <?php endif; ?>
             <div class="heading">Welcome Back to Haze</div>  
             <div class="input-form">
                 <div class="label-name">Username</div>

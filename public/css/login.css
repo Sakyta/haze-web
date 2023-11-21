@@ -19,7 +19,7 @@
 .login-form {
     background-color: #1e2b21;
     width: 35em;
-    height: 30em;
+    height: auto;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -119,4 +119,15 @@
 
 .dont-have a:active {
     text-decoration: underline;
+}
+
+.alert {
+    background-color: rgb(255, 85, 85);
+    display: flex;
+    justify-content: center;
+}
+
+.alert h4 {
+    text-transform: uppercase;
+    font-size: 1.25em;
 }

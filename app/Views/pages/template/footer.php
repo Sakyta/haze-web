@@ -10,7 +10,7 @@
     <div class="kaki">
         <img src="../img/Haze.png" alt="Haze">
         <div class="desc">
-            <div class="copyright">© 2023 KERA - Project Akhir Praktikum Pemrograman Web 2023</div>
+            <div class="copyright">© 2023 KERA - Project Akhir Praktikum Pemrograman Web</div>
             <div class="bar-kaki">
                 <div class="bar">About KERA</div>
                 <div class="pemisah">|</div>
