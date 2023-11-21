@@ -8,14 +8,14 @@
 
 body {
     background-color: #1e2b21;
-    font-family: 'Poppins', sans-serif; ;
+    font-family: 'Poppins', sans-serif;
     color: #ffffff;
 }
 
 .logo img {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
 }
 
@@ -37,30 +37,45 @@ body {
     text-align: center;
 }
 
+#about_ctas_area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
 .about_cta {
+    flex: 2; 
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
+    padding: 50px;
     margin-bottom: 20px;
 }
 
-.about_cta .cta_hero {
-    flex: 1;
+.about_cta:not(:last-child) {
+    margin-right: 10px;
+}
+
+.about_cta .cta_hero,
+.about_cta .cta_content {
     text-align: center;
 }
 
-.about_cta .hero_complete {
-    width: 100%;
-    height: auto;
+.about_cta .cta_hero img,
+.about_cta .cta_content {
+    max-width: 70%;
+    margin: 0 auto;
 }
 
 .about_cta .cta_content {
-    flex: 1;
     padding: 0 20px;
 }
 
 .cta_title {
     font-size: 24px;
+    margin-bottom: 16px;
 }
 
 .cta_text {
@@ -68,12 +83,12 @@ body {
 }
 
 .logo_steamworks img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
-  }
+}
 
 #about_steam_feature_subtitle {
-    margin-bottom: 24px; 
+    margin-bottom: 24px;
 }
 
 #about_steam_features_area {
@@ -86,7 +101,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    justify-items: center; 
+    justify-items: center;
     text-align: center;
 }
 
@@ -95,22 +110,39 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.feature:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.feature .cta_title,
+.feature .cta_text {
+    text-align: center;
 }
 
 .about_feature_icon img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
 }
 
 .platform_icon {
-    display: flex; 
+    display: flex;
     justify-content: center;
     margin: 10px;
 }
 
 .platform_icon img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
+}
+
+.about_area_inner_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
