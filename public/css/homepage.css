@@ -5,6 +5,7 @@ body {
     text-align: center;
 }
 
+/* CSS untuk section game */
 .populer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -36,6 +37,8 @@ body {
     margin-bottom: 25px;
 }
 
+
+/* CSS untuk bagian news */
 .slider {
     display: block;
     margin-left: auto;
@@ -49,7 +52,8 @@ body {
 
 .slides {
     display: flex;
-    margin-left: 125px;
+    margin-left: auto;
+    margin-right: auto;
     width: 37.5rem;
     overflow: hidden;
 }
