@@ -22,7 +22,7 @@ body {
 .background-image {
     background: url(../img/bg.png) no-repeat center center fixed;
     background-size: cover;
-    height: 50vh;
+    height: 25vh;
     width: 100%;
     position: relative;
     z-index: 0;
@@ -50,8 +50,10 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding: 10px;
     margin-bottom: 20px;
+    padding-left: 150px;
+    padding-right: 120px;
 }
 
 .about_cta:not(:last-child) {
@@ -61,6 +63,7 @@ body {
 .about_cta .cta_hero,
 .about_cta .cta_content {
     text-align: center;
+    width: 600px;
 }
 
 .about_cta .cta_hero img,
@@ -74,12 +77,13 @@ body {
 }
 
 .cta_title {
-    font-size: 24px;
+    font-size: 35px;
     margin-bottom: 16px;
+    text-align: start;
 }
-
 .cta_text {
     font-size: 16px;
+    text-align: start;
 }
 
 .logo_steamworks img {
@@ -88,15 +92,18 @@ body {
 }
 
 #about_steam_feature_subtitle {
-    margin-bottom: 24px;
+    margin-bottom: 50px;
+    width: 350px;
+    text-align: center;
+    margin-left: 290px;
 }
 
 #about_steam_features_area {
     display: grid;
     place-items: center;
     text-align: center;
+    background-color: black;
 }
-
 #about_steam_features_grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -105,15 +112,21 @@ body {
     text-align: center;
 }
 
-.feature {
+.feature{
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     max-width: 200px;
-    margin: 0 auto;
+    margin: 50px;
 }
-
+.feature:hover{
+    background-color: gray;
+    border-radius: 10px;
+}
+.about_feature_icon:hover {
+    background-color: linear-gradient(to right, #06BFFF, #2B74FF);;
+}
 .feature:not(:last-child) {
     margin-bottom: 50px;
 }
@@ -127,6 +140,9 @@ body {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 180px;
 }
 
 .platform_icon {

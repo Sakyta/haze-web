@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <title>Dashboard Page</title>
 </head>
 
@@ -22,10 +22,26 @@
     <div id="about_ctas_area">
         <div class="about_area_inner_wrapper">
             <div id="about_ctas">
-                
                 <div class="about_cta">
-                    <div class="cta_hero">
-                        <img class="hero_complete" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_steamworks_pt1.png">
+                    <div class="cta_content">
+                        <h2 class="cta_title">
+                            Exclusive Deals
+                        </h2>
+                        <div class="cta_text">
+                            Unlock special discounts and exclusive offers on a wide range of games.
+                        </div>
+                        <div class="cta_btn" style="text-align: start;">
+                            <a href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="cta_hero" style="overflow: hidden; position: relative; height: 170px;">
+                        <img class="hero_complete" style="position: absolute; top: -120px; right: 50px" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt2.png?v=2">
+                    </div>
+                </div>
+
+                <div class="about_cta">
+                    <div class="cta_hero" stlye="overflow: hidden; position: relative; height: 80px;">
+                        <img class="hero_complete" style="position: absolute; top: 600px; right: 855px;" width="400px" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_steamworks_pt1.png">
                     </div>
                     <div class="cta_content">
                         <h2 class="cta_title">
@@ -35,7 +51,7 @@
                             Discover a vast collection of games from various genres. Browse through a curated selection
                             of AAA titles and indie gems. Purchase and own your favorite games to build your gaming library.
                         </div>
-                        <div class="cta_btn">
+                        <div class="cta_btn" style="text-align: start;">
                             <a href="#">Explore Games</a>
                         </div>
                     </div>
@@ -44,34 +60,17 @@
                 <div class="about_cta">
                     <div class="cta_content">
                         <h2 class="cta_title">
-                            Exclusive Deals
-                        </h2>
-                        <div class="cta_text">
-                            Unlock special discounts and exclusive offers on a wide range of games.
-                        </div>
-                        <div class="cta_btn">
-                            <a href="#">Learn More</a>
-                        </div>
-                    </div>
-                    <div class="cta_hero">
-                        <img class="hero_complete" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt2.png?v=2">
-                    </div>
-                </div>
-
-                <div class="about_cta">
-                    <div class="cta_hero">
-                        <img class="hero_complete" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt1.png?v=2">
-                    </div>
-                    <div class="cta_content">
-                        <h2 class="cta_title">
                             Automatic Updates
                         </h2>
                         <div class="cta_text">
                             Enjoy hassle-free gaming with automatic updates for all your purchased games.
                         </div>
-                        <div class="cta_btn">
+                        <div class="cta_btn" style="text-align: start;">
                             <a href="#">Learn More</a>
                         </div>
+                    </div>
+                    <div class="cta_hero">
+                        <img class="hero_complete" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt1.png?v=2">
                     </div>
                 </div>  
             </div>
@@ -81,7 +80,7 @@
     <div id="about_steam_features_area">
         <div class="about_area_inner_wrapper">
             <div id="about_steam_features">
-                <h1 id="about_steam_feature_title">
+                <h1 id="about_steam_feature_title" style="margin-top: 50px;">
                     Features </h1>
                 <div id="about_steam_feature_subtitle">
                     We are constantly working to bring new updates and features to Haze, such as: </div>
