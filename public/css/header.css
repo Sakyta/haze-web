@@ -16,7 +16,7 @@
 .login-section {
     display: flex;
     justify-content: flex-end;
-    padding: 10px 30px;
+    padding: 0 30px;
 }
 
 .navbar {
@@ -24,7 +24,7 @@
     justify-content: center;
     align-items: center;
     background-color: #191A19;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     box-shadow: 40px;
 }
@@ -73,4 +73,19 @@
 
 .separator {
     color: white;
+}
+
+.profile-pic-head img {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-prof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }

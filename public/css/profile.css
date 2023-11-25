@@ -1,0 +1,58 @@
+.bungkus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    background-color: #1e2b21;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+    padding: 30px;
+    border-radius: 3em;
+    color: white;
+    background-color: #1c241e;
+}
+
+.profile-pic img {
+    width: 20em;
+    height: 20em;
+}
+
+.bio {
+    width: 40em;
+}
+
+.bio p {
+    text-align: justify;
+}
+
+.profile-pic {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nickname {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.info-player {
+    height: 100%;
+}
+
+.profile-pic a {
+    background-color: rgb(46, 54, 48);
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 1em;
+    text-decoration: none;
+    color: white;
+}

@@ -15,5 +15,10 @@ $routes->get('/register/process','Register::process');
 $routes->get('/about','Pages::about');
 $routes->get('/games','Pages::games');
 $routes->get('/logout','Login::logout');
+$routes->get('/profile','Pages::profile');
+$routes->get('/profile/edit','Register::edit_profile');
+$routes->get('/profile/edit/process','Register::edit_process');
+$routes->get('/library','Pages::library');
+$routes->get('/delete','Register::delete');
 
 $routes->setAutoRoute(true);

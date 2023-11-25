@@ -8,8 +8,22 @@
 <div class="head">
     <?php if (session()->has('username')) : ?>
         <div class="login-section">
-            <div class="link">
-                <a href="/logout">Log Out</a>
+            <div class="nav-prof">
+                <div class="link">
+                    <a href="/logout">Log Out</a>
+                </div>
+                <div class="link">
+                    <h4><?= $player->nickname ?></h4>
+                </div>
+                <div class="profile-pic-head">
+                    <a href="/profile">
+                    <?php if ($player->profile_pic == null) : ?>
+                        <img src="../img/default_user.png" alt="profile">
+                    <?php else : ?>
+                        <img src="<?= $player->profile_pic ?>" alt="profile">
+                    <?php endif;  ?>
+                    </a>
+                </div>
             </div>
         </div>
     <?php else : ?>
@@ -30,6 +44,9 @@
         </div>
         <div class="nav-links">
             <div class="link"><a href="/homepage">STORE</a></div>
+            <?php if (session()->has('username')) : ?>
+                <div class="link"><a href="/library">LIBRARY</a></div>
+            <?php endif; ?>
             <div class="link"><a href="/about">ABOUT</a></div>
             <div class="link"><a href="">SUPPORT</a></div>
         </div>

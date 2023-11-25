@@ -1,0 +1,65 @@
+.bungkus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    background-color: #1e2b21;
+}
+
+.edit-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    background-color: #1c241e;
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+}
+
+.edit-form h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.label-name {
+    margin-left: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.input-field {
+    margin: 2px 1em 10px 1em;
+}
+
+.input-field input, .input-field textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #5b5d61;
+}
+
+.sign-in { 
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.sign-in button {
+    outline: none;
+    background: linear-gradient(90deg, #00ff515c 0%, #00b92b 100%);  
+    border: none;
+    color: #fff;
+}
+
+.sign-in button:hover {
+    color: rgb(6, 46, 8);
+}
+
+.btn-submit {
+    width: 10em;
+    height: 4em;
+    justify-content: center;
+}
