@@ -23,7 +23,7 @@
     text-transform: uppercase;
 }
 
-.label-name {
+.label-name, .image-preview {
     margin-left: 1em;
     font-weight: 500;
     text-transform: uppercase;
@@ -62,4 +62,45 @@
     width: 10em;
     height: 4em;
     justify-content: center;
+}
+
+.image-preview img {
+    width: 15em;
+    height: 15em;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.alert {
+    background-color: rgb(255, 85, 85);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.alert h4 {
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+#output {
+    visibility: hidden;
+}
+
+input[type="file"]::file-selector-button {
+    border: none;
+    border-radius: 0.5em;
+    background-color: rgb(46, 54, 48);
+    padding: 0.75em;
+    color: white;
+    font-style: 'Poppins', sans-serif;
+    margin-right: 10px;    
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: rgb(63, 75, 67);
+}
+
+input, textarea {
+    color: white;
 }

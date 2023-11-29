@@ -8,22 +8,31 @@
 <div class="head">
     <?php if (session()->has('username')) : ?>
         <div class="login-section">
-            <div class="nav-prof">
-                <div class="link">
-                    <a href="/logout">Log Out</a>
-                </div>
-                <div class="link">
-                    <h4><?= $player->nickname ?></h4>
-                </div>
+            <div class="nav-prof">                
                 <div class="profile-pic-head">
+                    <div class="mini-profile">
+                        <h4><?= $player->nickname ?></h4>
+                        <?php if ($player->profile_pic == null) : ?>
+                            <img src="../img/default_user.png" alt="profile">
+                        <?php else : ?>
+                            <img src="data:image/png;base64,<?= $player->profile_pic ?>" alt="profile">
+                        <?php endif;  ?>
+                    </div>
+                    <div class="dropdown-child">
+                        <a href="/profile">Profile</a>
+                        <a href="/logout">Log Out</a>
+                    </div>
+                </div>
+                <!-- <div class="profile-pic-head">
                     <a href="/profile">
+                        <h4><?= $player->nickname ?></h4>
                     <?php if ($player->profile_pic == null) : ?>
                         <img src="../img/default_user.png" alt="profile">
                     <?php else : ?>
-                        <img src="<?= $player->profile_pic ?>" alt="profile">
+                        <img src="data:image/png;base64,<?= $player->profile_pic ?>" alt="profile">
                     <?php endif;  ?>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     <?php else : ?>

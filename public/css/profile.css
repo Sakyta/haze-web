@@ -21,6 +21,8 @@
 .profile-pic img {
     width: 20em;
     height: 20em;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .bio {

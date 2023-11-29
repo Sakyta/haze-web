@@ -51,7 +51,7 @@
 }
 
 .link {
-    margin: 0 10px;
+    margin: 10px;
     font-size: 18px;
 }
 
@@ -75,12 +75,14 @@
     color: white;
 }
 
-.profile-pic-head img {
+.mini-profile img {
     width: 3em;
     height: 3em;
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .nav-prof {
@@ -88,4 +90,45 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+}
+
+.profile-pic-head .mini-profile {
+    display: flex;   
+    gap: 0.5em; 
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.profile-pic-head:hover .dropdown-child {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    position: fixed;
+}
+
+.mini-profile {
+    background-color: #1c241e;
+    padding: 0.5em 1em;
+    border-radius: 0.75em;
+}
+
+.dropdown-child {   
+    display: none;    
+}
+
+.dropdown-child a {
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #1c241e;
+    padding: 10px;
+    min-width: 100%;    
+    text-align: center;
+}
+
+.profile-pic-head {
+    width: 10em;
+    text-align: center;
 }

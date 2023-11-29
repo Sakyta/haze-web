@@ -14,8 +14,8 @@
             <div class="profile-pic">
                 <?php if ($player->profile_pic == null) : ?>
                     <img src="../img/default_user.png" alt="profile">
-                <?php else : ?>
-                    <img src="<?= $player->profile_pic ?>" alt="profile">
+                <?php else : ?>                    
+                    <img src="data:image/png;base64,<?= $player->profile_pic ?>" alt="profile">
                 <?php endif;  ?>
                 <a href="/profile/edit">Edit Profile</a>
             </div>
