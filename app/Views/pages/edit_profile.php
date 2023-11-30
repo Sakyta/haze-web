@@ -30,7 +30,8 @@
                 <?php endif;  ?>
                 <img id="output">
             </div>
-            <div class="input-field">                
+            <div class="input-field">    
+                <div id="drop-area">Release Your File to Upload</div>            
                 <input type="file" name="profile_pic" id="profile_pic" class="input-image" size="20" accept="image/*" onchange="loadImage(event)">
             </div>
             <div class="label-name">Nickname</div>

@@ -3,14 +3,20 @@
 namespace App\Controllers;
 
 use App\Models\PlayerModel;
+use App\Models\GamesModel;
+use App\Models\PicModel;
 
 class Pages extends BaseController
 {
     protected $player;
+    protected $games;
+    protected $pic;
 
     public function __construct()
     {
         $this->player = new PlayerModel();
+        $this->games = new GamesModel();
+        $this->pic = new PicModel();
     }
 
     public function dashboard()
@@ -27,6 +33,8 @@ class Pages extends BaseController
 
     public function homepage()
     {
+        $data['games'] = $this->games->findAll();
+
         if (session()->has('username')) 
         {
             $data['player'] = $this->player->find(session('user_id'));
@@ -34,7 +42,7 @@ class Pages extends BaseController
             return view('pages/homepage', $data);
         }
 
-        return view('pages/homepage');
+        return view('pages/homepage', $data);
     }
 
     public function about()
@@ -49,8 +57,11 @@ class Pages extends BaseController
         return view('pages/about');
     }
 
-    public function games()
+    public function games($id)
     {
+        $data['games'] = $this->games->find($id);
+        $data['pic'] = $this->pic->find($id);
+        
         if (session()->has('username')) 
         {
             $data['player'] = $this->player->find(session('user_id'));
@@ -58,7 +69,7 @@ class Pages extends BaseController
             return view('pages/games', $data);
         }
 
-        return view('pages/games');
+        return view('pages/games', $data);
     }
 
     public function profile()

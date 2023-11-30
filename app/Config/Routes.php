@@ -7,13 +7,13 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/dashboard','Pages::dashboard');
-$routes->post('/login','Users::login');
-$routes->get('/login/process','Users::loginProcess');
+$routes->get('/login','Users::login');
+$routes->post('/login/process','Users::loginProcess');
 $routes->get('/homepage','Pages::homepage');
 $routes->get('/register','Users::register');
 $routes->post('/register/process','Users::registerProcess');
 $routes->get('/about','Pages::about');
-$routes->get('/games','Pages::games');
+$routes->get('/games/(:any)','Pages::games/$1');
 $routes->get('/logout','Users::logout');
 $routes->get('/profile','Pages::profile');
 $routes->get('/profile/edit','Users::edit_profile');

@@ -104,3 +104,12 @@ input[type="file"]::file-selector-button:hover {
 input, textarea {
     color: white;
 }
+
+#drop-area {
+    display: none;
+    border: 2px solid white;
+    background-color: rgb(89, 105, 94);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}

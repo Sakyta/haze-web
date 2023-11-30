@@ -30,84 +30,54 @@
     <div class="game-section">
         <h1>Game Of The Year Nominees</h1>
         <section class="populer">
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/alanwake2.png" alt="" width="300" height="300">
-                    <div class="judul">Alan Wake II</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/baldursgate3.png" alt="" width="300" height="300">
-                    <div class="judul">Baldurs Gate 3</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/spiderman2.png" alt="" width="300" height="300">
-                    <div class="judul">Marvel : Spider-man 2</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/re4.png" alt="" width="300" height="300">
-                    <div class="judul">Resident Evil 4 Remake</div>
-                </a>
-            </div>
+            <?php foreach ($games as $row): ?>
+                <?php if ($row->game_id == "SGNLK"): ?>
+                    <div class="item">
+                        <a href="/games/<?= $row->game_id ?>">
+                            <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                            <div class="judul"><?= $row->game_name ?></div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <?php if ($row->game_id == "JUOIG"): ?>
+                    <div class="item">
+                        <a href="/games/<?= $row->game_id ?>">
+                            <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                            <div class="judul"><?= $row->game_name ?></div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <?php if ($row->game_id == "SFNJK"): ?>
+                    <div class="item">
+                        <a href="/games/<?= $row->game_id ?>">
+                            <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                            <div class="judul"><?= $row->game_name ?></div>
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <?php if ($row->game_id == "UIEFS"): ?>
+                    <div class="item">
+                        <a href="/games/<?= $row->game_id ?>">
+                            <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                            <div class="judul"><?= $row->game_name ?></div>
+                        </a>
+                    </div>
+                <?php endif; ?>                
+            <?php endforeach; ?> 
         </section>
     </div>
 
     <div class="game-section">
         <h1>Game List</h1>
         <section class="populer">
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/genshin.png" alt="" width="300" height="300">
-                    <div class="judul">Genshin Impact</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/mhw.png" alt="" width="300" height="300">
-                    <div class="judul">Monster Hunter: World</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/gowr.png" alt="" width="300" height="300">
-                    <div class="judul">God of War Ragnarök</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/fishing.png" alt="" width="300" height="300">
-                    <div class="judul">Fishing Planet</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/scarlet.png" alt="" width="300" height="300">
-                    <div class="judul">Scarlet Nexus</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/phasmo.png" alt="" width="300" height="300">
-                    <div class="judul">Phasmophobia</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/unbound.png" alt="" width="300" height="300">
-                    <div class="judul">A Space For The Unbound</div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="/games">
-                    <img src="../img/game/nier.png" alt="" width="300" height="300">
-                    <div class="judul">Nier: Automata</div>
-                </a>
-            </div>
+            <?php foreach ($games as $row): ?>
+                <div class="item">
+                    <a href="/games/<?= $row->game_id ?>">
+                        <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                        <div class="judul"><?= $row->game_name ?></div>
+                    </a>
+                </div>
+            <?php endforeach; ?>            
         </section>
     </div>
 

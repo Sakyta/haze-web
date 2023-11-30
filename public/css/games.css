@@ -20,6 +20,9 @@
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 10px;
+    padding: 0 15px;
+    width: 17em;
+    overflow: auto;
 }
 
 .pre {
@@ -43,6 +46,13 @@
 
 .tengah {
     flex: 0.5;
+}
+
+.display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .display img {
@@ -113,4 +123,12 @@
     flex-direction: column;
     gap: 15px;
     justify-content: space-evenly;
+}
+
+.left {
+    display: flex;
+}
+
+.selected {
+    border: 4px solid white;
 }

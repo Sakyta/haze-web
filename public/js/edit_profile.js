@@ -7,8 +7,3 @@ function loadImage(event)
         output.style.visibility = 'visible';
     }
 }
-
-function dragDrop(event)
-{
-    
-}
