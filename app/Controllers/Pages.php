@@ -95,4 +95,16 @@ class Pages extends BaseController
 
         return view('pages/library');
     }
+
+    public function cart()
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));
+            
+            return view('pages/cart', $data);
+        }
+
+        return view('pages/cart');
+    }
 }

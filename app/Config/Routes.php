@@ -20,5 +20,6 @@ $routes->get('/profile/edit','Users::edit_profile');
 $routes->post('/profile/edit/process','Users::edit_process');
 $routes->get('/library','Pages::library');
 $routes->get('/delete','Users::delete');
+$routes->get('/cart','Pages::cart');
 
 $routes->setAutoRoute(true);
