@@ -1,0 +1,59 @@
+body {
+    background-color: #1e2b21;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* CSS untuk bagian sorting */
+.s {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-top: 15px;
+}
+
+#sorting {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+h3 {
+    margin-top: 75px;
+}
+
+/* CSS untuk section game */
+.populer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin-left: 4%;
+    margin-right: 5%;
+}
+
+.item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.populer img {
+    border-radius: 10px;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item a:hover {
+    color: blue;
+}
+
+.game-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
