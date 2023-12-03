@@ -5,27 +5,6 @@ body {
     text-align: center;
 }
 
-/* CSS untuk bagian sorting */
-.s {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 75px;
-    margin-right: 75px;
-    margin-top: 15px;
-}
-
-#sorting {
-    background-color: black;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-}
-h3 {
-    margin-top: 75px;
-}
-
 /* CSS untuk section game */
 .populer {
     display: grid;
@@ -33,11 +12,13 @@ h3 {
     width: 90%;
     margin-left: 4%;
     margin-right: 5%;
+    position: relative;
 }
 
 .item {
     margin-left: 5px;
     margin-right: 5px;
+    position: relative;
 }
 
 .populer img {
@@ -49,11 +30,74 @@ h3 {
     text-decoration: none;
 }
 
-.item a:hover {
-    color: blue;
-}
-
 .game-section {
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 147px;
+    width: 300px;
+    margin: auto;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.398);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.populer:hover .overlay {
+    opacity: 0;
+}
+
+.detail {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    text-align: left;
+}
+
+/* CSS untuk bagian news */
+.slider {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+.slider h4 {
+    margin-top: 5%;
+}
+
+.slides {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 37.5rem;
+    overflow: hidden;
+}
+
+.slides img {
+    border-radius: 10px;
+}
+
+.slide {
+    width: 37.5rem;
+    transition: .5s;
+}
+
+.choose_1:checked~.slides>.s1 {
+    margin-left: -0rem;
+}
+
+.choose_2:checked~.slides>.s1 {
+    margin-left: -37.5rem;
 }

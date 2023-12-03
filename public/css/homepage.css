@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     background-color: #1e2b21;
     font-family: 'Poppins', sans-serif;
@@ -37,40 +41,61 @@ body {
     margin-bottom: 25px;
 }
 
+/* CSS untuk bagian news baru */
+h3 {
+    margin-bottom: 10px;
+}
 
-/* CSS untuk bagian news */
 .slider {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%;
-}
-
-.slider h4 {
-    margin-top: 5%;
-}
-
-.slides {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 37.5rem;
+    margin-top: 50px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 350px;
     overflow: hidden;
 }
 
-.slides img {
+.mySlides {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.mySlides.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mySlides img {
     border-radius: 10px;
+    vertical-align: middle;
+    overflow: hidden;
 }
 
-.slide {
-    width: 37.5rem;
-    transition: .5s;
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-.choose_1:checked~.slides>.s1 {
-    margin-left: -0rem;
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-.choose_2:checked~.slides>.s1 {
-    margin-left: -37.5rem;
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }

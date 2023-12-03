@@ -5,7 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+    <link rel="icon" href="../img/Haze.png">
     <link rel="stylesheet" href="../css/library.css">
+    <script>
+        function showOverlay(element) {
+            const overlay = element.querySelector('.overlay');
+            if (overlay.style.opacity !== '1') {
+                overlay.style.opacity = 1;
+            }
+        }
+
+        function hideOverlay(element) {
+            const overlay = element.querySelector('.overlay');
+            if (overlay.style.opacity !== '0') {
+                overlay.style.opacity = 0;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -25,10 +41,16 @@
         <?php if (!empty($games)) : ?>
             <section class="populer">
                 <?php foreach ($games as $row) : ?>
-                    <div class="item">
+                    <div class="item" onmouseover="showOverlay(this)" onmouseout="hideOverlay(this)">
                         <a href="/games/<?= $row->game_id ?>">
                             <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
-                            <div class="judul"><?= $row->game_name ?></div>
+                            <div class="overlay">
+                                <div class="detail">
+                                    <div class="title"><?= $row->game_name ?></div>
+                                    <div class="hours">8.10 Hours</div>
+                                    <div class="button"><button>Play</button></div>
+                                </div>
+                            </div>
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -37,7 +59,6 @@
             <h3>You have no game</h3>
         <?php endif; ?>
     </div>
-
 
     <!-- <a href="/delete">Delete Profile</a> -->
 
