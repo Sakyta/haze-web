@@ -2,9 +2,11 @@
 
 namespace App\Controllers;
 
+use App\Models\LibraryModel;
 use App\Models\PlayerModel;
 use App\Models\GamesModel;
 use App\Models\PicModel;
+use App\Models\CartModel;
 
 class Pages extends BaseController
 {
@@ -64,6 +66,14 @@ class Pages extends BaseController
         
         if (session()->has('username')) 
         {
+            $lib = new LibraryModel();            
+            $data['lib'] = [];
+            $dataLibrary = $lib->where([
+                'player_id' => session('user_id'),
+                'game_id' => $id
+            ])->first();            
+            $data['lib'] = $dataLibrary;
+
             $data['player'] = $this->player->find(session('user_id'));
             
             return view('pages/games', $data);
@@ -88,23 +98,43 @@ class Pages extends BaseController
     {
         if (session()->has('username')) 
         {
+            $lib = new LibraryModel();
+            $lib->select('library.*, games.game_pic, games.game_name');
+            $lib->join('games', 'games.game_id = library.game_id');
+            $lib->where([
+                'player_id' => session('user_id')
+            ]);
+            $data['games'] = $lib->get()->getResultArray();
             $data['player'] = $this->player->find(session('user_id'));
             
             return view('pages/library', $data);
         }
-
-        return view('pages/library');
+        else
+        {
+            return redirect()->to('/login');
+        }
     }
 
     public function cart()
     {
         if (session()->has('username')) 
         {
+            $cart = new CartModel();        
+            
+            $cart->select('cart.*, games.game_pic, games.game_name, games.price');
+            $cart->join('games', 'games.game_id = cart.game_id');
+            $cart->where([
+                'player_id' => session('user_id')
+            ]);
+            $data['cart'] = $cart->get()->getResultArray();                  
+
             $data['player'] = $this->player->find(session('user_id'));
             
             return view('pages/cart', $data);
         }
-
-        return view('pages/cart');
+        else
+        {
+            return redirect()->to('/login');
+        }        
     }
 }

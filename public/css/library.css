@@ -101,3 +101,9 @@ body {
 .choose_2:checked~.slides>.s1 {
     margin-left: -37.5rem;
 }
+
+.s {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}

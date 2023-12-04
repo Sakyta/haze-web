@@ -20,6 +20,7 @@
                     </div>
                     <div class="dropdown-child">
                         <a href="/profile">Profile</a>
+                        <a href="/cart">Cart</a>
                         <a href="/logout">Log Out</a>
                     </div>
                 </div>

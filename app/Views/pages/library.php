@@ -42,12 +42,12 @@
             <section class="populer">
                 <?php foreach ($games as $row) : ?>
                     <div class="item" onmouseover="showOverlay(this)" onmouseout="hideOverlay(this)">
-                        <a href="/games/<?= $row->game_id ?>">
-                            <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="300" height="300">
+                        <a href="/games/<?= $row['game_id']?>">
+                            <img src="data:image/png;base64, <?= $row['game_pic'] ?>" alt="" width="300" height="300">
                             <div class="overlay">
                                 <div class="detail">
-                                    <div class="title"><?= $row->game_name ?></div>
-                                    <div class="hours">8.10 Hours</div>
+                                    <div class="title"><?= $row['game_name'] ?></div>
+                                    <div class="hours"><?= $row['total_playtime'] ?> Hours</div>
                                     <div class="button"><button>Play</button></div>
                                 </div>
                             </div>

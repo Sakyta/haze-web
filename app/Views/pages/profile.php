@@ -18,6 +18,7 @@
                     <img src="data:image/png;base64,<?= $player->profile_pic ?>" alt="profile">
                 <?php endif;  ?>
                 <a href="/profile/edit">Edit Profile</a>
+                <div class="counter">Total Game : <span class="num-count"><?= $player->total_game ?></span></div>
             </div>
             <div class="info-player">
                 <div class="nickname">

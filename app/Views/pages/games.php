@@ -37,7 +37,11 @@
             </div>
             <div class="right">
                 <div class="price">
-                    <h3>Rp <?= $games->price ?> <a href="">Add to Cart</a></h3>
+                    <?php if ($lib) : ?>
+                        <h3>Rp <?= $games->price ?> <a href="/library">Owned</a></h3>
+                    <?php else : ?>
+                        <h3>Rp <?= $games->price ?> <a href="/add/<?= $games->game_id ?>">Add to Cart</a></h3>
+                    <?php endif; ?>
                 </div>
                 <div class="info">
                     <p>Rating : <?= $games->rating ?>/10</p>
