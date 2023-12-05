@@ -156,7 +156,7 @@ class Pages extends BaseController
             return view('pages/support', $data);
         }
 
-        return view('/login');
+        return redirect()->to('/login');
     }
 
     public function transaction($id)
@@ -175,7 +175,7 @@ class Pages extends BaseController
             return view('pages/transaction', $data);
         }
 
-        return view('/login');
+        return redirect()->to('/login');
     }
 
     public function topup()
@@ -188,6 +188,6 @@ class Pages extends BaseController
             return view('pages/topup', $data);
         }
 
-        return view('pages/topup');
+        return redirect()->to('/login');
     }
 }
