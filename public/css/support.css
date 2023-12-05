@@ -6,7 +6,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.main{
+.main {
     margin: 2em 400px;
 }
 
@@ -24,6 +24,13 @@ body {
     color: white;
 }
 
+.no-game {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    color: white;
+}
+
 .additional-box {
     background-color: rgb(46, 54, 48);
     border-radius: 4px;
@@ -31,7 +38,7 @@ body {
     padding: 10px;
     margin-top: 10px;
     position: relative;
-    display: flex; 
+    display: flex;
     align-items: center;
     gap: 1em;
     color: white;
@@ -39,8 +46,8 @@ body {
 }
 
 .additional-box p {
-    margin: 0; 
-    flex: 1; 
+    margin: 0;
+    flex: 1;
 }
 
 .triangle {
@@ -48,13 +55,13 @@ body {
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 20px solid white; 
-    margin-top: -2px; 
+    border-left: 20px solid white;
+    margin-top: -2px;
 }
 
 .persegi {
     margin-top: 10px;
     width: 700px;
-    height : 1px;
+    height: 1px;
     background-color: #333;
 }
