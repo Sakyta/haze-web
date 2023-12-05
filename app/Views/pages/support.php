@@ -12,44 +12,35 @@
     <?php include("template/header.php"); ?>
     <div class="main">
         <div class="help">
-            What do you need help with, "user"?
+            What do you need help with, <?= $player->nickname ?>?
         </div>
         <div class="recent-product">
             Recent products
         </div>
-        <div class="additional-box">
-            <p>Ini game.</p>
-            <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Ini game.</p>
-            <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Ini game.</p>
-            <div class="triangle"></div>
-        </div>
+        <?php $counter = 0 ?>
+        <?php foreach ($games as $row) : ?>
+            <?php $counter++ ?>
+            <div class="additional-box">
+                <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="50" height="50">
+                <p><?= $row->game_name ?></p>
+                <div class="triangle"></div>
+            </div>
+            <?php 
+            if ($counter == 3)
+            {
+                break;
+            }
+            ?>
+        <?php endforeach; ?>
         <div class="persegi"> </div>
-        <div class="additional-box">
+        <a class="additional-box" href="">
             <p>My Account</p>
             <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Wallets.</p>
+        </a>
+        <a class="additional-box" href="">
+            <p>Haze Wallet</p>
             <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Hanying.</p>
-            <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Hanying.</p>
-            <div class="triangle"></div>
-        </div>
-        <div class="additional-box">
-            <p>Hanying.</p>
-            <div class="triangle"></div>
-        </div>
+        </a>
     </div>
 
     <?php include("template/footer.php"); ?>

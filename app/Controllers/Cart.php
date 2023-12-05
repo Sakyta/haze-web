@@ -6,6 +6,8 @@ use App\Controllers\BaseController;
 use App\Models\CartModel;
 use App\Models\LibraryModel;
 use App\Models\PlayerModel;
+use App\Models\TransactionModel;
+use CodeIgniter\I18n\Time;
 
 class Cart extends BaseController
 {
@@ -46,8 +48,22 @@ class Cart extends BaseController
         $dataPlayer = $player->where([
             "player_id" => session('user_id')
         ])->first();
+        $transaction = new TransactionModel();
+        $transactionId = $this->generateTransactionId();
 
-        $counter = $dataPlayer->total_game;          
+        $counter = $dataPlayer->total_game;        
+
+        $this->cart->select('cart.*, games.game_pic, games.game_name, games.price');
+        $this->cart->join('games', 'games.game_id = cart.game_id');
+        $this->cart->where([
+            'player_id' => session('user_id')
+        ]);
+        $dataCart = $this->cart->get()->getResultObject();
+        $subtotal = 0;
+        foreach ($dataCart as $dummy)
+        {
+            $subtotal += $dummy->price;
+        }  
 
         foreach ($data as $dummy)
         {
@@ -58,12 +74,33 @@ class Cart extends BaseController
 
             $this->cart->delete($dummy->cart_id);
             $counter++;
+
+            $transaction->insert([
+                'transaction_id' => $transactionId,
+                'subtotal' => $subtotal,
+                'transaction_date' => Time::now()->toDateString(),
+                'player_id' => session('user_id'),
+                'game_id' => $dummy->game_id
+            ]);
         }
 
         $player->update(session('user_id'), [
             'total_game' => $counter
         ]);
 
-        return redirect()->to('/library');
+        return redirect()->to('/transaction/' . $transactionId);
+    }
+
+    public function generateTransactionId()
+    {
+        $numbers = '0123456789';
+        $randomId = '';
+
+        for ($i = 0; $i < 5; $i++)
+        {
+            $randomId .= $numbers[mt_rand(0, strlen($numbers) - 1)];
+        }
+
+        return $randomId;
     }
 }

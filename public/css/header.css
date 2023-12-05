@@ -105,13 +105,15 @@
     flex-direction: column;
     justify-content: end;
     align-items: end;
-    position: fixed;
+    position: absolute;
 }
 
 .mini-profile {
     background-color: #1c241e;
     padding: 0.5em 1em;
     border-radius: 0.75em;
+    height: 4em;
+    overflow: hidden;
 }
 
 .dropdown-child {   

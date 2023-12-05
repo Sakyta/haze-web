@@ -10,6 +10,24 @@ class Users extends BaseController
 {
     public function login()
     {
+        if (session()->has('username')) {
+            $player = new PlayerModel();
+            $data['player'] = $player->find(session('user_id'));
+
+            return redirect()->to('/homepage');
+        }
+
+        if (isset($_COOKIE['loginId'])) {
+            session()->set([
+                "username" => 'loginId',
+                "user_id" => 'userId',
+                'logged_in' => TRUE
+            ]);
+            if (session()->has('user_id')) {
+                return redirect()->to('/homepage');
+            }
+        }
+
         return view("pages/login");
     }
 
@@ -31,6 +49,16 @@ class Users extends BaseController
                     "user_id"  => $dataUser->user_id,
                     'logged_in' => TRUE
                 ]);
+
+                if (!empty($this->request->getVar('remember-me'))) {
+                    setcookie("loginId", $username, time() + (10 * 365 * 24 * 60 * 60));
+                    setcookie("loginPass", $password, time() + (10 * 365 * 24 * 60 * 60));
+                    setcookie("userId", $dataUser->user_id, time() + (10 * 365 * 24 * 60 * 60));
+                } else {
+                    setcookie("loginId", "");
+                    setcookie("loginPass", "");
+                    setcookie("userId", "");
+                }
 
                 session()->setFlashdata('message', 'Login Success!');
                 return redirect()->to('/homepage');
@@ -57,6 +85,13 @@ class Users extends BaseController
     
     public function register()
     {
+        if (session()->has('username')) {
+            $player = new PlayerModel();
+            $data['player'] = $player->find(session('user_id'));
+
+            return redirect()->to('/homepage');
+        }
+
         return view("pages/register");
     }
 
@@ -165,24 +200,17 @@ class Users extends BaseController
 
         $img = $this->request->getFile('profile_pic'); 
         
-        if (!$img)
+        if (isset($img))
         {
-            $imgData = base64_encode(file_get_contents($img)); 
-            $player->update($player_id, [
-                'player_id' => $player_id,
-                'nickname' => $this->request->getVar('nickname'),        
-                'profile_pic' => $imgData,
-                'bio' => $this->request->getVar('bio')
-            ]);
+            $imgData = base64_encode(file_get_contents($img));             
         }
-        else
-        {
-            $player->update($player_id, [
-                'player_id' => $player_id,
-                'nickname' => $this->request->getVar('nickname'),                    
-                'bio' => $this->request->getVar('bio')
-            ]);
-        }
+        
+        $player->update($player_id, [
+            'player_id' => $player_id,
+            'nickname' => $this->request->getVar('nickname'),                    
+            'profile_pic' => $imgData,
+            'bio' => $this->request->getVar('bio')
+        ]);
         
         session()->setFlashdata('message', 'Profile Edited');
         return redirect()->to('/profile');

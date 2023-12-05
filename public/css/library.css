@@ -65,45 +65,28 @@ body {
     text-align: left;
 }
 
-/* CSS untuk bagian news */
-.slider {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 65%;
-}
-
-.slider h4 {
-    margin-top: 5%;
-}
-
-.slides {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 37.5rem;
-    overflow: hidden;
-}
-
-.slides img {
-    border-radius: 10px;
-}
-
-.slide {
-    width: 37.5rem;
-    transition: .5s;
-}
-
-.choose_1:checked~.slides>.s1 {
-    margin-left: -0rem;
-}
-
-.choose_2:checked~.slides>.s1 {
-    margin-left: -37.5rem;
-}
-
+/* css untuk bagian judul atas section */
 .s {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+}
+
+select {
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 15px;
+}
+
+button {
+    padding: 5px;
+    background-color: greenyellow;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.id-player {
+    display: none;
 }

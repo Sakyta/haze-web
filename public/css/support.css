@@ -7,7 +7,7 @@ body {
 }
 
 .main{
-    margin-left:400px;
+    margin: 2em 400px;
 }
 
 .help {
@@ -32,7 +32,10 @@ body {
     margin-top: 10px;
     position: relative;
     display: flex; 
+    align-items: center;
+    gap: 1em;
     color: white;
+    text-decoration: none;
 }
 
 .additional-box p {

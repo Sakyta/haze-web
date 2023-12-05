@@ -59,7 +59,7 @@
                 <div class="link"><a href="/library">LIBRARY</a></div>
             <?php endif; ?>
             <div class="link"><a href="/about">ABOUT</a></div>
-            <div class="link"><a href="">SUPPORT</a></div>
+            <div class="link"><a href="/support">SUPPORT</a></div>
         </div>
     </nav>
 </div>  

@@ -7,6 +7,7 @@ use App\Models\PlayerModel;
 use App\Models\GamesModel;
 use App\Models\PicModel;
 use App\Models\CartModel;
+use App\Models\TransactionModel;
 
 class Pages extends BaseController
 {
@@ -145,15 +146,35 @@ class Pages extends BaseController
         }        
     }
 
-    public function support ()
+    public function support()
     {
         if (session()->has('username')) 
         {
             $data['player'] = $this->player->find(session('user_id'));
+            $data['games'] = $this->games->findAll();
             
             return view('pages/support', $data);
         }
 
-        return view('pages/support');
+        return view('/login');
+    }
+
+    public function transaction($id)
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));            
+            $transaction = new TransactionModel();
+            $transaction->select('transaction.*, games.game_name, games.price');
+            $transaction->join('games', 'transaction.game_id = games.game_id');
+            $transaction->where([
+                'transaction_id' => $id
+            ]);
+            $data['transaction'] = $transaction->get()->getResultArray();
+            
+            return view('pages/transaction', $data);
+        }
+
+        return view('/login');
     }
 }
