@@ -159,6 +159,19 @@ class Pages extends BaseController
         return view('/login');
     }
 
+    public function account()
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));
+            $data['games'] = $this->games->findAll();
+            
+            return view('pages/account', $data);
+        }
+
+        return view('/login');
+    }
+
     public function transaction($id)
     {
         if (session()->has('username')) 

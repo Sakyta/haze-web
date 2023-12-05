@@ -25,6 +25,7 @@ $routes->get('/add/(:any)', 'Cart::add/$1');
 $routes->get('/remove/(:any)', 'Cart::remove/$1');
 $routes->get('/buy', 'Cart::buy');
 $routes->get('/support', 'Pages::support');
+$routes->get('/myAccount', 'Pages::account');
 $routes->get('/transaction/(:any)', 'Pages::transaction/$1');
 
 

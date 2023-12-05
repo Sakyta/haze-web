@@ -17,16 +17,17 @@ class Users extends BaseController
             return redirect()->to('/homepage');
         }
 
-        if (isset($_COOKIE['loginId'])) {
+        // membuat session menggunakan cookie
+        /* if (isset($_COOKIE['loginId'])) {
             session()->set([
-                "username" => 'loginId',
-                "user_id" => 'userId',
+                "username" => $_COOKIE['loginId'],
+                "user_id" => $_COOKIE['userId'],
                 'logged_in' => TRUE
             ]);
             if (session()->has('user_id')) {
                 return redirect()->to('/homepage');
             }
-        }
+        } */
 
         return view("pages/login");
     }

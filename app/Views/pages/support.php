@@ -33,7 +33,7 @@
             ?>
         <?php endforeach; ?>
         <div class="persegi"> </div>
-        <a class="additional-box" href="">
+        <a class="additional-box" href="/myAccount">
             <p>My Account</p>
             <div class="triangle"></div>
         </a>
