@@ -177,4 +177,17 @@ class Pages extends BaseController
 
         return view('/login');
     }
+
+    public function topup()
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));
+            $data['games'] = $this->games->findAll();
+            
+            return view('pages/topup', $data);
+        }
+
+        return view('pages/topup');
+    }
 }
