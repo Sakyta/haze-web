@@ -21,8 +21,8 @@
         <?php foreach ($games as $row) : ?>
             <?php $counter++ ?>
             <div class="additional-box">
-                <img src="data:image/png;base64, <?= $row->game_pic ?>" alt="" width="50" height="50">
-                <p><?= $row->game_name ?></p>
+                <img src="data:image/png;base64, <?= $row['game_pic'] ?>" alt="" width="50" height="50">
+                <p><?= $row['game_name'] ?></p>
                 <div class="triangle"></div>
             </div>
             <?php 

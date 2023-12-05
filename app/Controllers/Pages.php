@@ -150,8 +150,14 @@ class Pages extends BaseController
     {
         if (session()->has('username')) 
         {
+            $lib = new LibraryModel();
+            $lib->select('library.*, games.game_pic, games.game_name');
+            $lib->join('games', 'games.game_id = library.game_id');
+            $lib->where([
+                'player_id' => session('user_id')
+            ]);
+            $data['games'] = $lib->get()->getResultArray();
             $data['player'] = $this->player->find(session('user_id'));
-            $data['games'] = $this->games->findAll();
             
             return view('pages/support', $data);
         }
