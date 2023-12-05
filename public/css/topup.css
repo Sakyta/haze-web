@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    background-color: #1e2b21;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main {
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.topup {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: white;
+}
+
+.nominal {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.container {
+    margin-top: 30px;
+    text-align: center;
+    background-color: #1c241e;
+    padding: 20px;
+    border-radius: 10px;
+    border-right: 8px solid rgb(46, 54, 48);
+    border-bottom: 8px solid rgb(46, 54, 48);
+}
+
+.nominal-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nominal-button {
+    display: inline-block;
+    margin: 10px;
+    width: 150px; 
+    height: 100px; 
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(46, 54, 48);
+    border: 2px solid rgb(46, 54, 48);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.nominal-button.selected {
+    background-color: rgb(67, 119, 80);
+    color: #fff;
+}
+
+.nominal-button:hover {
+    background-color: rgb(67, 119, 80);
+    color: #fff;
+}
+
+.pilih {
+    color: white;
+    font-size: 25px;
+    margin-bottom:20px;
+}
+.pilih-pembayaran {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pilihan-pembayaran {
+    text-align: left;
+    display:block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(46, 54, 48);
+    border: 2px solid rgb(46, 54, 48);
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pilihan-pembayaran.selected {
+    display:block;
+    background-color: rgb(67, 119, 80);
+    color: #fff;
+}
+
+.pilihan-pembayaran:hover {
+    background-color: rgb(67, 119, 80);
+    color: #fff;
+    cursor: pointer;
+}
+
+.beli-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(67, 119, 80);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.beli-button:hover {
+    background-color: rgb(83, 187, 109);
+}

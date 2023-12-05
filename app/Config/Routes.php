@@ -27,6 +27,7 @@ $routes->get('/buy', 'Cart::buy');
 $routes->get('/support', 'Pages::support');
 $routes->get('/myAccount', 'Pages::account');
 $routes->get('/transaction/(:any)', 'Pages::transaction/$1');
+$routes->get('/topup', 'Pages::topup');
 
 
 $routes->setAutoRoute(true);

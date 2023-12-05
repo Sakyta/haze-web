@@ -156,7 +156,7 @@ class Pages extends BaseController
             return view('pages/support', $data);
         }
 
-        return view('/login');
+        return redirect()->to('/login');
     }
 
     public function account()
@@ -188,6 +188,19 @@ class Pages extends BaseController
             return view('pages/transaction', $data);
         }
 
-        return view('/login');
+        return redirect()->to('/login');
+    }
+
+    public function topup()
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));
+            $data['games'] = $this->games->findAll();
+            
+            return view('pages/topup', $data);
+        }
+
+        return redirect()->to('/login');
     }
 }
