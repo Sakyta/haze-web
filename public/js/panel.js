@@ -1,10 +1,11 @@
 setTimeout(function() {
-    object = document.getElementById('over');
-    object.style.opacity = "0";
+    document.getElementById('over').style.display = 'none';
+    document.getElementById('back').style.display = 'none';
 }, 2500);
 
-function hide(event)
+function hide(event, id)
 {
-    object = document.getElementById('over');
-    object.style.visibility = "hidden";    
+    event.preventDefault();
+
+    document.getElementById(id).style.visibility = "hidden";    
 }

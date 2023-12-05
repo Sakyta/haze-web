@@ -7,6 +7,7 @@ use CodeIgniter\Model;
 class LibraryModel extends Model
 {
     protected $table            = 'library';
+    protected $primaryKey = "player_id";
     protected $returnType       = 'object';
     protected $protectFields    = true;
     protected $allowedFields    = [

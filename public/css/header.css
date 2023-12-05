@@ -90,6 +90,7 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
+    gap: 1em;
 }
 
 .profile-pic-head .mini-profile {
@@ -108,7 +109,7 @@
     position: absolute;
 }
 
-.mini-profile {
+.mini-profile, .mini-wallet {
     background-color: #1c241e;
     padding: 0.5em 1em;
     border-radius: 0.75em;
@@ -133,4 +134,10 @@
 .profile-pic-head {
     width: 10em;
     text-align: center;
+}
+
+.mini-wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }

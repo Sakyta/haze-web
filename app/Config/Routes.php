@@ -25,9 +25,10 @@ $routes->get('/add/(:any)', 'Cart::add/$1');
 $routes->get('/remove/(:any)', 'Cart::remove/$1');
 $routes->get('/buy', 'Cart::buy');
 $routes->get('/support', 'Pages::support');
-$routes->get('/myAccount', 'Pages::account');
+$routes->get('/my/account', 'Pages::account');
 $routes->get('/transaction/(:any)', 'Pages::transaction/$1');
 $routes->get('/topup', 'Pages::topup');
+$routes->get('/topup/process', 'Cart::topupProcess');
 
 
 $routes->setAutoRoute(true);

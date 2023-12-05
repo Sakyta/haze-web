@@ -20,11 +20,11 @@
                 My Haze Wallet
             </div>
             <p>Haze Wallet Balance : <?= $player->haze_wallet ?></p>
-            <a class="wallet" href="">+Add funds to your Haze Wallet</a>
+            <a class="wallet" href="/topup">+Add funds to your Haze Wallet</a>
         </div>
         <div class="persegi"> </div>
         <div class="delete-box">
-            <a class="delete" href="">Delete My Haze Account</a>
+            <a class="delete" href="/delete">Delete My Haze Account</a>
         </div>
     </div>
 

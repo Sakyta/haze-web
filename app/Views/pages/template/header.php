@@ -9,8 +9,11 @@
 <div class="head">
     <?php if (session()->has('username')) : ?>
         <div class="login-section">
-            <div class="nav-prof">                
-                <div class="profile-pic-head">
+            <div class="nav-prof">            
+                <div class="mini-wallet">
+                    <h4>Rp <?= number_format($player->haze_wallet) ?></h4>
+                </div>    
+                <div class="profile-pic-head">                    
                     <div class="mini-profile">
                         <h4><?= $player->nickname ?></h4>
                         <?php if ($player->profile_pic == null) : ?>
@@ -25,16 +28,6 @@
                         <a href="/logout">Log Out</a>
                     </div>
                 </div>
-                <!-- <div class="profile-pic-head">
-                    <a href="/profile">
-                        <h4><?= $player->nickname ?></h4>
-                    <?php if ($player->profile_pic == null) : ?>
-                        <img src="../img/default_user.png" alt="profile">
-                    <?php else : ?>
-                        <img src="data:image/png;base64,<?= $player->profile_pic ?>" alt="profile">
-                    <?php endif;  ?>
-                    </a>
-                </div> -->
             </div>
         </div>
     <?php else : ?>

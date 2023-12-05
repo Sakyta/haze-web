@@ -38,11 +38,11 @@
             </div>
         <?php endif; ?>
         <div class="persegi"> </div>
-        <a class="additional-box" href="/myAccount">
+        <a class="additional-box" href="/my/account">
             <p>My Account</p>
             <div class="triangle"></div>
         </a>
-        <a class="additional-box" href="">
+        <a class="additional-box" href="/topup">
             <p>Haze Wallet</p>
             <div class="triangle"></div>
         </a>

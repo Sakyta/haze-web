@@ -37,6 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
             clearSelectionNominal();
             button.classList.add("selected");
             updatePaymentDetails();
+            var radio = button.previousElementSibling;
+            radio.checked = true;
         });
     });
 
@@ -44,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         pilihan.addEventListener("click", function () {
             clearSelectionPembayaran();
             pilihan.classList.add("selected");
+            var radio = button.previousElementSibling;
+            radio.checked = true;
         });
     });
 });

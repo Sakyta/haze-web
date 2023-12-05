@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\CartModel;
+use App\Models\LibraryModel;
+use App\Models\TransactionModel;
 use App\Models\UsersModel;
 use App\Models\PlayerModel;
 use CodeIgniter\I18n\Time;
@@ -10,23 +13,17 @@ class Users extends BaseController
 {
     public function login()
     {
-        if (session()->has('username')) {
-            $player = new PlayerModel();
-            $data['player'] = $player->find(session('user_id'));
-
+        if (session()->has('username')) {            
             return redirect()->to('/homepage');
         }
 
-        // membuat session menggunakan cookie
-        /* if (isset($_COOKIE['loginId'])) {
+        /* if (isset($_COOKIE['loginId'])) {   
             session()->set([
                 "username" => $_COOKIE['loginId'],
                 "user_id" => $_COOKIE['userId'],
                 'logged_in' => TRUE
             ]);
-            if (session()->has('user_id')) {
-                return redirect()->to('/homepage');
-            }
+            return redirect()->to('/homepage');
         } */
 
         return view("pages/login");
@@ -81,15 +78,13 @@ class Users extends BaseController
     {
         session_unset();
         session()->destroy();        
+        
         return redirect()->to('/login');
     }
     
     public function register()
     {
-        if (session()->has('username')) {
-            $player = new PlayerModel();
-            $data['player'] = $player->find(session('user_id'));
-
+        if (session()->has('username')) {            
             return redirect()->to('/homepage');
         }
 
@@ -201,17 +196,24 @@ class Users extends BaseController
 
         $img = $this->request->getFile('profile_pic'); 
         
-        if (isset($img))
+        if ($img->isValid())
         {
             $imgData = base64_encode(file_get_contents($img));             
+            $player->update($player_id, [
+                'player_id' => $player_id,
+                'nickname' => $this->request->getVar('nickname'),                    
+                'profile_pic' => $imgData ?? null,
+                'bio' => $this->request->getVar('bio')
+            ]);
         }
-        
-        $player->update($player_id, [
-            'player_id' => $player_id,
-            'nickname' => $this->request->getVar('nickname'),                    
-            'profile_pic' => $imgData,
-            'bio' => $this->request->getVar('bio')
-        ]);
+        else
+        {
+            $player->update($player_id, [
+                'player_id' => $player_id,
+                'nickname' => $this->request->getVar('nickname'),                                    
+                'bio' => $this->request->getVar('bio')
+            ]);
+        }
         
         session()->setFlashdata('message', 'Profile Edited');
         return redirect()->to('/profile');
@@ -221,9 +223,37 @@ class Users extends BaseController
     {
         $player = new PlayerModel();
         $users = new UsersModel();
+        $cart = new CartModel();
+        $library = new LibraryModel();
+        $transaction = new TransactionModel();
 
-        $player->delete(session('user_id'));
+        $dataCart = $cart->where([
+            'player_id' => session('user_id')
+        ])->findAll();
+        $dataLibrary = $library->where([
+            'player_id' => session('user_id')
+        ])->findAll();
+        $dataTransaction = $transaction->where([
+            'player_id' => session('user_id')
+        ])->findAll();
+        
+        foreach ($dataCart as $data)
+        {
+            $cart->delete($data->cart_id);
+        }
+
+        foreach ($dataLibrary as $data)
+        {
+            $library->delete($data->player_id);
+        }
+
+        foreach ($dataTransaction as $data)
+        {
+            $transaction->delete($data->transaction_id);
+        }
+
         $users->delete(session('username'));
+        $player->delete(session('user_id'));
 
         session()->setFlashdata('message', 'Account Deleted');
         return redirect()->to('/logout');

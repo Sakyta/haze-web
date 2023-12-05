@@ -65,6 +65,16 @@ class Cart extends BaseController
             $subtotal += $dummy->price;
         }  
 
+        if ($subtotal > $dataPlayer->haze_wallet)
+        {
+            session()->setFlashdata('warning', 'Your Haze Wallet balance is too low!');
+            return redirect()->back();
+        }
+        else
+        {
+            $newBalance = $dataPlayer->haze_wallet - $subtotal;
+        }        
+
         foreach ($data as $dummy)
         {
             $this->library->insert([
@@ -85,7 +95,8 @@ class Cart extends BaseController
         }
 
         $player->update(session('user_id'), [
-            'total_game' => $counter
+            'total_game' => $counter,
+            'haze_wallet' => $newBalance
         ]);
 
         return redirect()->to('/transaction/' . $transactionId);
@@ -102,5 +113,25 @@ class Cart extends BaseController
         }
 
         return $randomId;
+    }
+
+    public function topupProcess()
+    {
+        $nominal = $this->request->getVar('selected_nominal');
+        
+        $player = new PlayerModel();
+        $dataPlayer = $player->where([
+            'player_id' => session('user_id')
+        ])->first();
+
+        $wallet = $dataPlayer->haze_wallet;
+        $wallet += $nominal;        
+        
+        $player->update($dataPlayer->player_id, [
+            'haze_wallet' => $wallet
+        ]);
+
+        session()->setFlashdata('message', 'Top Up Success');
+        return redirect()->to('/my/account');
     }
 }
