@@ -25,6 +25,7 @@ class Cart extends BaseController
             'game_id' => $game_id
         ]);
 
+        session()->setFlashdata('message', 'Add to Cart Success');
         return redirect()->to('/cart');
     }
 
@@ -32,12 +33,15 @@ class Cart extends BaseController
     {
         $this->cart->delete($cart_id);
 
+        session()->setFlashdata('message', 'Delete Item Success');
         return redirect()->to('/cart');
     }
 
     public function buy()
     {
-        $data = $this->cart->findAll();
+        $data = $this->cart->where([
+            "player_id" => session('user_id')
+        ])->findAll();
         $player = new PlayerModel();
         $dataPlayer = $player->where([
             "player_id" => session('user_id')
@@ -47,16 +51,13 @@ class Cart extends BaseController
 
         foreach ($data as $dummy)
         {
-            if ($dummy->player_id == session('user_id'))
-            {
-                $this->library->insert([
-                    'player_id' => $dummy->player_id,
-                    'game_id' => $dummy->game_id
-                ]);
+            $this->library->insert([
+                'player_id' => $dummy->player_id,
+                'game_id' => $dummy->game_id
+            ]);
 
-                $this->cart->delete($dummy->cart_id);
-                $counter++;
-            }
+            $this->cart->delete($dummy->cart_id);
+            $counter++;
         }
 
         $player->update(session('user_id'), [

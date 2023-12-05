@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/header.css">
 </head>
+<?php include 'panel.php'; ?>
 <div class="head">
     <?php if (session()->has('username')) : ?>
         <div class="login-section">

@@ -31,6 +31,8 @@ class Users extends BaseController
                     "user_id"  => $dataUser->user_id,
                     'logged_in' => TRUE
                 ]);
+
+                session()->setFlashdata('message', 'Login Success!');
                 return redirect()->to('/homepage');
             }
             else
@@ -49,7 +51,7 @@ class Users extends BaseController
     public function logout()
     {
         session_unset();
-        session()->destroy();
+        session()->destroy();        
         return redirect()->to('/login');
     }
     
@@ -105,6 +107,7 @@ class Users extends BaseController
             'created_at' => Time::now()
         ]);
 
+        session()->setFlashdata('message', 'Register Success!');
         return redirect()->to('/login');
     }
 
@@ -160,17 +163,28 @@ class Users extends BaseController
             return redirect()->back()->withInput();
         };
 
-        $img = $this->request->getFile('profile_pic');       
+        $img = $this->request->getFile('profile_pic'); 
         
-        $imgData = base64_encode(file_get_contents($img)); 
-
-        $player->update($player_id, [
-            'player_id' => $player_id,
-            'nickname' => $this->request->getVar('nickname'),        
-            'profile_pic' => $imgData,
-            'bio' => $this->request->getVar('bio')
-        ]);
-
+        if (!$img)
+        {
+            $imgData = base64_encode(file_get_contents($img)); 
+            $player->update($player_id, [
+                'player_id' => $player_id,
+                'nickname' => $this->request->getVar('nickname'),        
+                'profile_pic' => $imgData,
+                'bio' => $this->request->getVar('bio')
+            ]);
+        }
+        else
+        {
+            $player->update($player_id, [
+                'player_id' => $player_id,
+                'nickname' => $this->request->getVar('nickname'),                    
+                'bio' => $this->request->getVar('bio')
+            ]);
+        }
+        
+        session()->setFlashdata('message', 'Profile Edited');
         return redirect()->to('/profile');
     }
 
@@ -182,6 +196,7 @@ class Users extends BaseController
         $player->delete(session('user_id'));
         $users->delete(session('username'));
 
+        session()->setFlashdata('message', 'Account Deleted');
         return redirect()->to('/logout');
     }
 }

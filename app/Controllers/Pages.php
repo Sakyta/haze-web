@@ -66,13 +66,20 @@ class Pages extends BaseController
         
         if (session()->has('username')) 
         {
-            $lib = new LibraryModel();            
+            $lib = new LibraryModel();      
+            $cart = new CartModel();
+            $data['cart'] = [];
+            $dataCart = $cart->where([
+                'player_id' => session('user_id'),
+                'game_id' => $id
+            ])->first();
             $data['lib'] = [];
             $dataLibrary = $lib->where([
                 'player_id' => session('user_id'),
                 'game_id' => $id
             ])->first();            
             $data['lib'] = $dataLibrary;
+            $data['cart'] = $dataCart;
 
             $data['player'] = $this->player->find(session('user_id'));
             
