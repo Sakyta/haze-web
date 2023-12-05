@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Account</title>
     <link rel="stylesheet" href="../css/account.css">
+    <script src="../js/account.js"></script>
 </head>
 
 <body>
@@ -19,12 +20,12 @@
             <div class="wallet-title">
                 My Haze Wallet
             </div>
-            <p>Haze Wallet Balance : <?= $player->haze_wallet ?></p>
+            <p>Haze Wallet Balance : Rp <?= number_format($player->haze_wallet) ?></p>
             <a class="wallet" href="/topup">+Add funds to your Haze Wallet</a>
         </div>
         <div class="persegi"> </div>
         <div class="delete-box">
-            <a class="delete" href="/delete">Delete My Haze Account</a>
+            <a id="delete-acc" class=" delete" href="/delete">Delete My Haze Account</a>
         </div>
     </div>
 

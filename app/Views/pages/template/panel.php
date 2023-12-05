@@ -18,10 +18,10 @@
     <?php if (!empty(session()->getFlashdata('warning'))): ?>
         <div class="back" id="back">
             <div class="warning">
-                <h1>
+                <h3>
                     <?= session()->getFlashdata('warning') ?>   
                     <button onclick="hide(event, 'back')">Close</button>
-                </h1>
+                </h3>
             </div>
         </div>
     <?php endif; ?>

@@ -23,7 +23,7 @@
                 <tr>
                     <td class="satu"><img src="data:image/png;base64, <?= $row['game_pic'] ?>" alt=""></td>
                     <td class="dua"><?= $row['game_name'] ?></td>
-                    <td class="tiga">Rp <?= $row['price'] ?></td>
+                    <td class="tiga">Rp <?= number_format($row['price']) ?></td>
                     <td class="empat"><a href="/remove/<?= $row['cart_id'] ?>" class="apus">Delete</a></td>
                 </tr>                            
             <?php endforeach; ?>
@@ -31,7 +31,7 @@
                     <td class="tombol" colspan="2">
                         <a class="beli" href='/buy'>Buy</a>
                     </td>
-                    <td class="harga" colspan="2">Rp <?= $total ?></td>
+                    <td class="harga" colspan="2">Rp <?= number_format($total)?></td>
                 </tr>
             <?php else : ?>
                 <tr>

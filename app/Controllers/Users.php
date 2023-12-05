@@ -97,24 +97,24 @@ class Users extends BaseController
             'username' => [
                 'rules' => 'required|min_length[4]|max_length[20]|is_unique[users.username]',
                 'errors' => [
-                    'required' => '{field} Harus Diisi',
-                    'min_length' => '{field} Minimal 4 Karakter',
-                    'max_length' => '{field} Maksimal 20 Karakter',
-                    'is_unique' => 'Username sudah digunakan sebelumnya',
+                    'required' => '{field} Must be filled',
+                    'min_length' => '{field} Minimum 4 Characters',
+                    'max_length' => '{field} Maximum 20 Characters',
+                    'is_unique' => 'Username has been used previously',
                 ]
             ],
             'password' => [
                 'rules' => 'required|min_length[8]|max_length[20]',
                 'errors'=> [
-                    'required' => '{field} Harus Diisi',
-                    'min_length' => '{field} Minimal 8 Karakter',
-                    'max_length' => '{field} Maksimal 20 Karakter',
+                    'required' => '{field} Must be filled',
+                    'min_length' => '{field} Minimum 8 Characters',
+                    'max_length' => '{field} Maximum 20 Characters',
                 ]
             ],
             'nickname' => [
                 'rules' => 'required',
                 'errors'=> [
-                    'required' => '{field} Harus Diisi'
+                    'required' => '{field} Must be filled'
                 ]
             ],
         ])) {

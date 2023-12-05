@@ -34,7 +34,7 @@
                 <tr>
                 <td><?= $no++ ?></td>
                 <td><?= $row['game_name'] ?></td>
-                <td>Rp <?= $row['price'] ?></td>
+                <td>Rp <?= number_format($row['price']) ?></td>
                 </tr>
             <?php endforeach; ?>
             <tr>
@@ -43,7 +43,7 @@
                 </td>
                 <?php foreach ($transaction as $row) : ?>
                 <td>
-                    Rp <?= $row['subtotal'] ?>
+                    Rp <?= number_format($row['subtotal']) ?>
                 </td>
                 <?php break; endforeach; ?>
             </tr>   
