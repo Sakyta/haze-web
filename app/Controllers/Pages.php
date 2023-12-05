@@ -137,4 +137,16 @@ class Pages extends BaseController
             return redirect()->to('/login');
         }        
     }
+
+    public function support ()
+    {
+        if (session()->has('username')) 
+        {
+            $data['player'] = $this->player->find(session('user_id'));
+            
+            return view('pages/support', $data);
+        }
+
+        return view('pages/support');
+    }
 }

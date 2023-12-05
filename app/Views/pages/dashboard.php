@@ -35,13 +35,15 @@
                         </div>
                     </div>
                     <div class="cta_hero" style="overflow: hidden; position: relative; height: 170px;">
-                        <img class="hero_complete" style="position: absolute; top: -120px; right: 50px" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt2.png?v=2">
+                        <img class="hero_complete" style="position: absolute; top: -120px; right: 50px"
+                            src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt2.png?v=2">
                     </div>
                 </div>
 
                 <div class="about_cta">
-                    <div class="cta_hero" stlye="overflow: hidden; position: relative; height: 80px;">
-                        <img class="hero_complete" style="position: absolute; top: 600px; right: 855px;" width="400px" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_steamworks_pt1.png">
+                    <div class="cta_hero">
+                        <img class="hero_complete"
+                            src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_steamworks_pt1.png">
                     </div>
                     <div class="cta_content">
                         <h2 class="cta_title">
@@ -49,7 +51,8 @@
                         </h2>
                         <div class="cta_text">
                             Discover a vast collection of games from various genres. Browse through a curated selection
-                            of AAA titles and indie gems. Purchase and own your favorite games to build your gaming library.
+                            of AAA titles and indie gems. Purchase and own your favorite games to build your gaming
+                            library.
                         </div>
                         <div class="cta_btn" style="text-align: start;">
                             <a href="#">Explore Games</a>
@@ -70,9 +73,10 @@
                         </div>
                     </div>
                     <div class="cta_hero">
-                        <img class="hero_complete" src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt1.png?v=2">
+                        <img class="hero_complete"
+                            src="https://cdn.akamai.steamstatic.com/store/about/cta_hero_hardware_pt1.png?v=2">
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>

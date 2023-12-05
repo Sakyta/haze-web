@@ -24,5 +24,7 @@ $routes->get('/cart','Pages::cart');
 $routes->get('/add/(:any)', 'Cart::add/$1');
 $routes->get('/remove/(:any)', 'Cart::remove/$1');
 $routes->get('/buy', 'Cart::buy');
+$routes->get('/support', 'Pages::support');
+
 
 $routes->setAutoRoute(true);
