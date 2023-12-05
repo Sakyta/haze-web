@@ -1,0 +1,26 @@
+.over {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: opacity 1s ease-out;
+}
+
+.panel h4 {
+    border-radius: 0.5em;
+    width: fit-content;
+    background-color: rgb(149, 255, 149);
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    display: flex;
+    gap: 0.5em;  
+    color: black;  
+}
+
+.panel h4 button {
+    background: none;
+    padding: 0.25em;
+    border: none;
+    font-weight: 600;
+    font-size: 0.75em;
+}

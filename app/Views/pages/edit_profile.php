@@ -36,7 +36,7 @@
             </div>
             <div class="label-name">Nickname</div>
             <div class="input-field">
-                <input type="text" name="nickname" id="nickname" value="<?= $player->nickname; ?>">
+                <input type="text" name="nickname" id="nickname" value="<?= $player->nickname; ?>" autocomplete="off">
             </div>
             <div class="label-name">Bio</div>
             <div class="input-field">
