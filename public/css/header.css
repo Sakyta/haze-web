@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.head {
+    background-color: #191A19;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.login-section {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 30px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #191A19;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 40px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+    margin-right: 30px;
+    display: flex;
+    max-width: 100%;
+    height: 20%;
+}
+
+.logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.link a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.link a:hover {
+    color: #2980b9;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.separator {
+    color: white;
+}
+
+.mini-profile img {
+    width: 3em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.nav-prof {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 1em;
+}
+
+.profile-pic-head .mini-profile {
+    display: flex;   
+    gap: 0.5em; 
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.profile-pic-head:hover .dropdown-child {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    position: absolute;
+}
+
+.mini-profile, .mini-wallet {
+    background-color: #1c241e;
+    padding: 0.5em 1em;
+    border-radius: 0.75em;
+    height: 4em;
+    overflow: hidden;
+}
+
+.dropdown-child {   
+    display: none;    
+}
+
+.dropdown-child a {
+    text-decoration: none;
+    display: flex;
+    color: white;
+    background-color: #1c241e;
+    padding: 10px;
+    min-width: 100%;    
+    text-align: center;
+}
+
+.profile-pic-head {
+    width: 10em;
+    text-align: center;
+}
+
+.mini-wallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}

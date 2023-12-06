@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #1e2b21;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    min-height: 100vh;
+}
+
+.title {
+    color: white;
+    background-color: #1d682f;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+    box-shadow: 10px 10px 0  #1f1f1f;
+    text-align: center;
+    width: 600px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+table {
+    width: 600px;
+    border-collapse: collapse;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 20px 0  #1f1f1f;
+}
+
+tr {
+    height: 50px;
+    text-align: center;
+}
+
+tr:nth-child(odd) {
+    background-color: #3e754b;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(39, 69, 51);
+}
+
+.beli {
+    padding: 5px 5em;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.satu {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.satu img {
+    width: 100px;
+    height: 100px;
+}
+
+.dua {
+    width: 250px;
+    height: 100px;
+}
+
+.tiga {
+    width: 150px;
+    height: 100px;
+}
+
+.empat {
+    width: 100px;
+    height: 100px;
+}
+
+.tombol {
+    width: 400px;
+    height: 20px;
+}
+
+.harga {
+    color: white;
+}
+
+.apus {
+    text-decoration: none;
+    color: red;
+}
+
+.apus:hover {
+    text-decoration: underline;
+}

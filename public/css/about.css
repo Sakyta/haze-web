@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.badan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1e2b21;
+}
+
+.kera h2, .haze h2 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.card {
+    background-color: #1e2b21;
+    color: white;
+}
+
+.member {
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15em;
+    margin: 15px;
+    background-color: #3e5643;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.avatar {
+    width: 10em;
+    height: 10em;
+}
+
+.med {
+    width: 3em;
+    height: 3em;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile {
+    display: flex;
+}
+
+.tengah {
+    flex: 1;
+}
+
+.socmed {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.socmed a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.comprov {
+    text-align: justify;
+    width: 45em;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comprov img {
+    width: 10em;
+    height: 10em;
+}
+
+.kera, .haze {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+span {
+    color: black;
+}
