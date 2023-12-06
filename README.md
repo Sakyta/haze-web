@@ -59,6 +59,6 @@ https://www.figma.com/file/kipZEHYVdSpStsXO6MLDTZ/Untitled?type=design&node-id=0
 
 Berikut merupakan rancangan skema database dari website layanan distribusi game digital.
 
-  ![](img/skemaDatabase.png)
+![database](public/img/haze-web-database.png)
 
 proyek-web-kera created by GitHub Classroom
